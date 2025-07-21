@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products - IPRG Techsphere</title>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="nav-container">
+    <div class="brand">IPRG Techsphere</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav class="nav-left">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="product.html">Products</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="product-section">
+  <h1>Our Products</h1>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="images/product1.jpg" alt="Product 1">
+      <h3>Product Name 1</h3>
+      <p>Reliable and affordable solution for your business.</p>
+      <div class="price">₹ 4,999</div>
+      <div class="actions"><button>Buy Now</button></div>
+    </div>
+    <!-- Add more product cards similarly -->
+  </div>
+</main>
+
+<footer class="footer-container"> <!-- same footer --> </footer>
+<div class="footer-bottom">&copy; 2025 IPRG Techsphere India Pvt Ltd. All rights reserved.</div>
+
+<script>function toggleMenu() { document.querySelector('.nav-left').classList.toggle('show'); }</script>
+</body>
+</html>
