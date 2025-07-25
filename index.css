@@ -175,6 +175,18 @@ img { max-width: 100%; display: block; height: auto; }
 
 
 /* Navbar */
+.nav-left .brand {
+  font-size: 24px;           /* thoda bada text */
+  font-weight: 700;          /* bold */
+  color: #ebeef5;           /* apne brand ka color, change bhi kar sakte ho */
+  font-family: 'Poppins', sans-serif;  /* stylish font example */
+  letter-spacing: 1px;      /* thoda space letters me */
+  text-transform: uppercase; /* sab capital letters */
+  margin-right: 20px;
+  padding: auto;
+      
+}
+
 .nav-left {
   display: flex;
   gap: 20px;
@@ -512,22 +524,88 @@ img { max-width: 100%; display: block; height: auto; }
     font-size: 1.5rem;
   }
 }
-/* Industries Section */
-/* Section styling */
-.industries {
-  padding: 60px 20px;
-  background-color: #f9fafb;   /* very light grey background */
+/* Service section */
+.info-section {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.industries h2 {
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 40px;
-  text-align: center;
-  color: #333;
+.info-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
+
+.info-card {
+  width: 220px;
+  text-align: center;
+  background: #f3f1f1;
+  
+  padding: 20px 10px;
+ 
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #0f0f0f;
+}
+
+.plus-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  color: #fcf7f7;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+.info-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
+  font-size: 14px;
+  color: #161616;
+  margin-top: 10px;
+}
+
+.info-card.active .info-content {
+  max-height: 200px; /* adjust based on content */
+  opacity: 1;
+}
+.plus-btn:hover {
+  background: #0c0c0c; /* light gray on hover */
+  color: #f5f1f1; /* dark text */
+}
+
 
 /* Grid styling */
+.industries h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 28px;
+  color: #0c0d0e;  /* brand color example */
+  margin-bottom: 20px;
+}
+  
+.industry{
+  text-align: center;
+  padding: 40px 20px;
+
+}
+
 .industry-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -552,6 +630,7 @@ img { max-width: 100%; display: block; height: auto; }
   transform: translateY(-5px);
   box-shadow: 0
 }
+
 /* Products */
 .product-grid {
   display: grid;
@@ -737,4 +816,199 @@ img { max-width: 100%; display: block; height: auto; }
   border: none;
   padding: 10px 15px;
   cursor: pointer;
+}
+
+.hero {
+  background: linear-gradient(to right, #2F4F4F, #556B2F);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.service-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  text-align: center;
+}
+
+.cta {
+  text-align: center;
+  background: #D2691E;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.btn {
+  display: inline-block;
+  background: #fff;
+  color: #D2691E;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.faq {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.faq-item {
+  background: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-left: 4px solid #D2691E;
+}
+
+
+.testimonials {
+  background: #F5F5F0; /* ivory background */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2em;
+  color: #2F4F4F; /* deep slate */
+  margin-bottom: 30px;
+}
+
+.testimonial-slider {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonial-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-item p {
+  font-style: italic;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.testimonial-item h3 {
+  margin: 0;
+  font-size: 1.1em;
+  color: #D2691E; /* terracotta orange */
+}
+
+.testimonial-item span {
+  display: block;
+  font-size: 0.9em;
+  color: #556B2F; /* dark olive */
+}
+
+/* Style the Google Translate dropdown */
+.header-tools {
+  display: flex;
+  align-items: center;
+}
+
+#google_translate_element {
+  margin-right: 15px; /* creates space */
+}
+
+
+#google_translate_element {
+  display: inline-block;
+  margin-left: 12px;           /* space from other nav items */
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.goog-te-combo {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 4px 20px;
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.goog-te-combo:hover {
+  border-color: #2F4F4F;          /* your accent color */
+  background-color: #fff;
+}
+
+/* Hide the ugly Google Translate banner */
+.goog-logo-link, .goog-te-gadget span, .goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;          /* fix layout shift */
+}
+
+.founder-section {
+  background-color: #f5f5f0;  /* light ivory background */
+  padding: 60px 20px;
+  color: #333;
+}
+
+.founder-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.founder-photo {
+  width: 250px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.founder-details {
+  flex: 1;
+}
+
+.founder-details h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #2F4F4F; /* deep slate */
+}
+
+.founder-details p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.founder-details blockquote {
+  font-style: italic;
+  color: #556B2F; /* dark olive accent */
+  border-left: 4px solid #D2691E; /* terracotta orange */
+  padding-left: 10px;
+  margin-top: 15px;
 }
