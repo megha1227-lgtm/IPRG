@@ -37,16 +37,16 @@
         <div class="brand">IPRG Techsphere</div>
         
         
-        <a href="index.html">Home</a>
+        <a href="/index.html">Home</a>
         <a href="frontend/about.html">Who we are</a>
-        <a href="products.html">Products</a>
-        <a href="services.html">Services</a>
-        <a href="careers.html">Careers</a>
-        <a href="support.html">Support</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
-        <a href="terms.html">Terms</a>
+        <a href="frontend/product.html">Products</a>
+        <a href="frontend/services.html">Services</a>
+        <a href="frontend/support.html">Support</a>
+        <a href="frontend/blog.html">Blog</a>
+        <a href="frontend/contact.html">Contact</a>
+        <a href="frontend/terms.html">Terms</a>
          <div class="search-box">
+            <div id="google_translate_element"></div>
   <input type="text" id="searchInput" placeholder="Search services...">
   <i class="fas fa-search"></i>
 </div>
@@ -58,6 +58,21 @@
       
     </div>
   </header>
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en', // default language
+    includedLanguages: 'en,it,ru', // add more if needed
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" 
+  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
 
    <section class="hero">
     <div class="hero-container">
@@ -134,6 +149,42 @@
     </div>
   </div>
 </section>
+<section class="info-section">
+ <div class="info-cards-container">
+    <div class="info-card">
+      <h3>Service offerings</h3>
+      <div class="plus-btn">+</div>
+      <div class="info-content">
+        <p>Details about our service offerings. We help you build scalable, secure, and robust solutions.</p>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>Explore industries</h3>
+      <div class="plus-btn">+</div>
+      <div class="info-content">
+        <p>Discover how we work with different industries to deliver transformative outcomes.</p>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>Our platforms</h3>
+      <div class="plus-btn">+</div>
+      <div class="info-content">
+        <p>Learn more about our innovative platforms and tools for better business efficiency.</p>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>Navigate your next</h3>
+      <div class="plus-btn">+</div>
+      <div class="info-content">
+        <p>This is the hidden content for navigating your next. You can add paragraphs, lists, or images here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="industries">
   <h2>Select your industry. Discover our impact.</h2>
@@ -260,10 +311,31 @@
     </div>
     <div class="testimonial-item">
       <p>"We saw a significant improvement in our operations after partnering with IPRG Techsphere."</p>
-      <h3>Mike Johnson</h3>/
+      <h3>Mike Johnson</h3>
       <span>Operations Manager, Global Corp</span>
-
+    </div>
   </div>
+</section>
+
+<section class="founder-section">
+  <div class="founder-container">
+    <img src="images/gautam-jain.jpg" alt="Gautam Jain - Founder" class="founder-photo">
+    <div class="founder-details">
+      <h2>Gautam Jain – Founder & Visionary Leader</h2>
+      <p>
+        With an unwavering passion for technology and innovation, <strong>Gautam Jain</strong> laid the foundation of <strong>IPRG Techsphere</strong> to bridge the gap between businesses and next-generation digital solutions.
+      </p>
+      <p>
+        Starting his journey as a curious developer, Gautam transformed his vision into reality by building a company that prioritizes <em>client success, transparency, and future-ready technology</em>. Under his leadership, IPRG Techsphere has grown into a trusted IT partner known for delivering <strong>cutting-edge software, robust web solutions, and AI-driven services</strong> that empower businesses worldwide.
+      </p>
+      <p>
+        Beyond his technical expertise, Gautam is admired for his <em>entrepreneurial spirit, ethical approach, and dedication to nurturing talent</em>. His forward-thinking mindset continues to inspire the team to innovate and exceed client expectations every day.
+      </p>
+      <blockquote>“Our mission is to make technology simple, accessible, and impactful for every business.”</blockquote>
+    </div>
+  </div>
+</section>
+
 <script src="https://kit.fontawesome.com/a2e0e6f8a0.js" crossorigin="anonymous"></script>
 
 
@@ -291,12 +363,8 @@
     &copy; 2025 IPRG Techsphere India Pvt Ltd. All rights reserved.
   </div>
 
-<script>
-function toggleMenu() {
-  var nav = document.querySelector('.nav-left');
-  nav.classList.toggle('show');
-}
-</script>
+<script src="index.js"></script>
+
 
 </body>
 </html>

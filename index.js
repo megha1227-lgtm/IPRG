@@ -38,3 +38,11 @@ window.onclick = function(event) {
     modal.style.display = 'none';
   }
 }
+
+// Toggle FAQ content visibility
+document.querySelectorAll('.plus-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.parentElement.classList.toggle('active');
+  });
+});
+

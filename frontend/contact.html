@@ -4,24 +4,38 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact - IPRG Techsphere</title>
-<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="/index.css">
 </head>
 <body>
 <header class="navbar">
-  <div class="nav-container">
-    <div class="brand">IPRG Techsphere</div>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <nav class="nav-left">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="product.html">Products</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
-      <a href="terms.html">Terms</a>
-    </nav>
-  </div>
-</header>
+    <div class="nav-container">
+     
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <nav class="nav-left">
+        <div class="brand">IPRG Techsphere</div>
+        
+        
+        <a href="/index.html">Home</a>
+        <a href="about.html">Who we are</a>
+        <a href="product.html">Products</a>
+        <a href="services.html">Services</a>
+        <a href="support.html">Support</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms</a>
+         <div class="search-box">
+            <div id="google_translate_element"></div>
+  <input type="text" id="searchInput" placeholder="Search services...">
+  <i class="fas fa-search"></i>
+</div>
+<div class="login-button" onclick="document.getElementById('loginModal').style.display='block'">Login</div>
+        <div class="close" onclick="document.getElementById('loginModal').style.display='none'">&times;</div>
+      </nav>
 
+     
+      
+    </div>
+  </header>
 
 <main class="container">
   <h1>Contact Us</h1>
