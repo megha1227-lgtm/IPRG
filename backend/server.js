@@ -28,3 +28,7 @@ app.use('/api/admin', adminRoutes);
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server started on port ${PORT}`));
+
+
+const customerRoutes = require('./routes/customerRoutes');
+app.use('/api/customers', customerRoutes);
