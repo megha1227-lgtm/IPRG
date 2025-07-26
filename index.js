@@ -46,3 +46,15 @@ document.querySelectorAll('.plus-btn').forEach(btn => {
   });
 });
 
+
+const launchDate = new Date('2025-10-25');  
+
+  const today = new Date();
+
+  if (today < launchDate) {
+    // Redirect to coming soon page
+    window.location.href = "comingsoon.html";
+  }
+
+
+  
