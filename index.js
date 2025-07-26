@@ -57,4 +57,19 @@ const launchDate = new Date('2025-10-25');
   }
 
 
-  
+document.getElementById('customerForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData);
+  try {
+    const res = await fetch('/api/customers/add', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const msg = await res.json();
+    document.getElementById('responseMsg').innerText = msg.message || 'Success';
+  } catch (error) {
+    document.getElementById('responseMsg').innerText = 'Error submitting data';
+  }
+});
