@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coming Soon</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #2F4F4F, #556B2F);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+
+  .coming-soon-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    max-width: 400px;
+    width: 90%;
+  }
+
+  .logo {
+    max-width: 100px;
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #FFD700;
+  }
+
+  p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+
+  .countdown {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+  }
+
+  .time-box {
+    background: rgba(0,0,0,0.3);
+    padding: 10px 12px;
+    border-radius: 8px;
+    min-width: 60px;
+  }
+
+  .time-box span {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .label {
+    font-size: 0.8em;
+    color: #ddd;
+    margin-top: 3px;
+  }
+
+  .subscribe-box {
+    margin-top: 15px;
+  }
+
+  .subscribe-box input[type="email"] {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    width: 60%;
+    max-width: 180px;
+    margin-right: 5px;
+  }
+
+  .subscribe-box button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #FFD700;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .subscribe-box button:hover {
+    background-color: #e6c200;
+  }
+
+  /* Popup styling */
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: rgba(255,255,255,0.95);
+    color: #333;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    text-align: center;
+    z-index: 999;
+    transition: transform 0.3s ease;
+  }
+
+  .popup.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .popup button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2F4F4F;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .popup button:hover {
+    background-color: #556B2F;
+  }
+</style>
+</head>
+<body>
+<div class="coming-soon-container">
+ 
+  <h1>Coming Soon!</h1>
+  <p>We're getting ready to launch something amazing. Stay tuned!</p>
+  <div class="countdown">
+    <div class="time-box">
+      <span id="months">0</span>
+      <div class="label">Months</div>
+    </div>
+    <div class="time-box">
+      <span id="days">0</span>
+      <div class="label">Days</div>
+    </div>
+    <div class="time-box">
+      <span id="hours">0</span>
+      <div class="label">Hours</div>
+    </div>
+    <div class="time-box">
+      <span id="minutes">0</span>
+      <div class="label">Minutes</div>
+    </div>
+    <div class="time-box">
+      <span id="seconds">0</span>
+      <div class="label">Seconds</div>
+    </div>
+  </div>
+  <div class="subscribe-box">
+    <input type="email" placeholder="Enter your email" id="emailInput" />
+    <button onclick="showPopup()">Notify Me</button>
+  </div>
+</div>
+
+<!-- Popup -->
+<div class="popup" id="thankYouPopup">
+  <p>Thank you! We'll notify you when we launch. 🎉</p>
+  <button onclick="closePopup()">Close</button>
+</div>
+
+<script>
+const launchDate = new Date("2025-11-01T12:00:00").getTime();
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = launchDate - now;
+
+  if (distance < 0) {
+    document.querySelector('.countdown').innerHTML = "<p>We have launched!</p>";
+    return;
+  }
+
+  const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+  const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById('months').innerText = months;
+  document.getElementById('days').innerText = days;
+  document.getElementById('hours').innerText = hours;
+  document.getElementById('minutes').innerText = minutes;
+  document.getElementById('seconds').innerText = seconds;
+}
+
+function showPopup() {
+  const email = document.getElementById('emailInput').value;
+  if(email.trim() !== "") {
+    document.getElementById('thankYouPopup').classList.add('active');
+  } else {
+    alert('Please enter your email.');
+  }
+}
+
+function closePopup() {
+  document.getElementById('thankYouPopup').classList.remove('active');
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>
