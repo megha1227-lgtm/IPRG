@@ -4,6 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Coming Soon</title>
+<script src="coming-redirect.js"></script>
+
 <style>
   body {
     margin: 0;
@@ -173,6 +175,12 @@
 </div>
 
 <script>
+
+  // Redirect only if running on github.io (production)
+if (window.location.hostname.includes("github.io")) {
+  window.location.href = "coming-soon.html";
+}
+
 const launchDate = new Date("2025-11-01T12:00:00").getTime();
 
 function updateCountdown() {

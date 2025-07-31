@@ -39,6 +39,7 @@ window.onclick = function(event) {
   }
 }
 
+
 // Toggle FAQ content visibility
 document.querySelectorAll('.plus-btn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -47,14 +48,6 @@ document.querySelectorAll('.plus-btn').forEach(btn => {
 });
 
 
-const launchDate = new Date('2025-10-25');  
-
-  const today = new Date();
-
-  if (today < launchDate) {
-    // Redirect to coming soon page
-    window.location.href = "comingsoon.html";
-  }
 
 
 document.getElementById('customerForm').addEventListener('submit', async (e) => {
@@ -73,3 +66,9 @@ document.getElementById('customerForm').addEventListener('submit', async (e) => 
     document.getElementById('responseMsg').innerText = 'Error submitting data';
   }
 });
+
+
+// script.js me
+if (localStorage.getItem('loggedIn') === 'true') {
+  document.querySelector('nav').innerHTML += '<a href="#">Welcome!</a>';
+}

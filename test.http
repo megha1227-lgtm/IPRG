@@ -1,0 +1,9 @@
+POST http://localhost:5000/api/customers/add
+Content-Type: application/json
+
+{
+  "name": "Megha Sharma",
+  "email": "megha@example.com",
+  "phone": "9876543210",
+  "message": "Testing from VS Code"
+}
