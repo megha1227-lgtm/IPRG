@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Monthly Production FAQs</title>
+<title>Other Departments FAQs</title>
 <style>
   body {
     font-family: 'Poppins', sans-serif;
@@ -71,41 +71,41 @@
 <body>
 
 <header>
-  <h1>Monthly Production FAQs</h1>
+  <h1>Other Departments FAQs</h1>
 </header>
 
 <div class="container">
-  <p>Explore monthly production challenges & ERP solutions. Select the questions you face and submit to get help!</p>
+  <p>Explore common challenges & ERP solutions across other departments. Select your questions and submit!</p>
 
   <form id="faqForm">
     <div class="faq-item">
-      <input type="checkbox" name="faq" value="Manual production planning & scheduling?">
-      <label>Manual production planning & scheduling?</label>
-      <div class="answer">✅ Solution: Automated production planning & scheduling module.</div>
+      <input type="checkbox" name="faq" value="Difficulty in tracking inter-department tasks?">
+      <label>Difficulty in tracking inter-department tasks?</label>
+      <div class="answer">✅ Solution: Task assignment & tracking module.</div>
     </div>
 
     <div class="faq-item">
-      <input type="checkbox" name="faq" value="Difficulty tracking WIP (work in progress)?">
-      <label>Difficulty tracking WIP (work in progress)?</label>
-      <div class="answer">✅ Solution: Live WIP tracking dashboard with real-time updates.</div>
+      <input type="checkbox" name="faq" value="Still sharing updates over WhatsApp?">
+      <label>Still sharing updates over WhatsApp?</label>
+      <div class="answer">✅ Solution: Built-in internal chat & notice board.</div>
     </div>
 
     <div class="faq-item">
-      <input type="checkbox" name="faq" value="Delay in monthly production reports?">
-      <label>Delay in monthly production reports?</label>
-      <div class="answer">✅ Solution: Auto-generated production reports & alerts.</div>
+      <input type="checkbox" name="faq" value="Delay in approvals?">
+      <label>Delay in approvals due to manual process?</label>
+      <div class="answer">✅ Solution: Multi-level approval workflow in ERP.</div>
     </div>
 
     <div class="faq-item">
-      <input type="checkbox" name="faq" value="Mismatch between production & inventory?">
-      <label>Mismatch between production & inventory?</label>
-      <div class="answer">✅ Solution: Integrated production & inventory system.</div>
+      <input type="checkbox" name="faq" value="Missing monthly departmental reports?">
+      <label>Missing monthly departmental reports?</label>
+      <div class="answer">✅ Solution: Auto-generated departmental dashboards.</div>
     </div>
 
     <div class="faq-item">
-      <input type="checkbox" name="faq" value="Hard to analyze production efficiency?">
-      <label>Hard to analyze production efficiency?</label>
-      <div class="answer">✅ Solution: Efficiency KPIs & analysis dashboard.</div>
+      <input type="checkbox" name="faq" value="Difficulty in sharing data securely?">
+      <label>Difficulty in sharing data securely?</label>
+      <div class="answer">✅ Solution: Role-based access & data sharing.</div>
     </div>
 
     <div class="actions">
@@ -127,16 +127,16 @@
       return;
     }
 
-    // Send data to backend (replace with your actual API route)
-      fetch('/api/faq-queries', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ 
-    page: 'mnarketing&sales', // ya 'sales', 'hr' depending on page
-    faqs: selected 
-  })
-})
-
+    // Send data to backend (replace with actual API route)
+   fetch('/api/faq-queries', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+        page: 'others', // or 'hr', 'sales', etc. depending on page
+        faqs: selected 
+      })
+    })
+   
     .then(res => res.json())
     .then(data => {
       alert('✅ Thank you! Your queries were submitted.');

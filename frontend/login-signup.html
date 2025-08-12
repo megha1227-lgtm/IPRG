@@ -1,119 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IPRG | Login & Signup</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background: #f4f4f4;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .container {
-      width: 300px;
-    }
-    .box {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .box input {
-      width: 100%;
-      margin: 8px 0;
-      padding: 8px;
-    }
-    .box button {
-      width: 100%;
-      padding: 10px;
-      background: #2F4F4F;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-    }
-    .hidden { display: none; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login / Signup</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-
-    <div id="signupBox" class="box">
-      <h2>Sign Up</h2>
+<div id="overlay" class="overlay hidden">
+  <div class="modal">
+    <div class="tabs">
+      <button id="showSignup" class="active">Sign Up</button>
+      <button id="showLogin">Login</button>
+    </div>
+    <div id="signupForm">
       <input type="text" id="signupName" placeholder="Name">
       <input type="email" id="signupEmail" placeholder="Email">
       <input type="text" id="signupPhone" placeholder="Phone">
       <input type="password" id="signupPassword" placeholder="Password">
-      <button onclick="signup()">Sign Up</button>
-      <p>Already have an account? <a href="#" onclick="toggleForm('login')">Login</a></p>
+      <button onclick="signup()">Create Account</button>
     </div>
-
-    <div id="loginBox" class="box hidden">
-      <h2>Login</h2>
+    <div id="loginForm" class="hidden">
       <input type="email" id="loginEmail" placeholder="Email">
       <input type="password" id="loginPassword" placeholder="Password">
       <button onclick="login()">Login</button>
-      <p>New here? <a href="#" onclick="toggleForm('signup')">Sign Up</a></p>
     </div>
-
-    <div id="successBox" class="box hidden">
-      <h2>Welcome!</h2>
-      <p>You are now logged in ✅</p>
-    </div>
-
   </div>
+</div>
 
-  <script>
-    function toggleForm(form) {
-      document.getElementById('signupBox').classList.toggle('hidden', form !== 'signup');
-      document.getElementById('loginBox').classList.toggle('hidden', form !== 'login');
-    }
-
-    async function signup() {
-      const name = document.getElementById('signupName').value;
-      const email = document.getElementById('signupEmail').value;
-      const phone = document.getElementById('signupPhone').value;
-      const password = document.getElementById('signupPassword').value;
-
-      const res = await fetch('http://localhost:5000/api/customers/signup', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ name, email, phone, password })
-      });
-      const data = await res.json();
-      alert(data.message || data.error || 'Signup failed');
-      if (res.ok) toggleForm('login');
-    }
-
-    async function login() {
-      const email = document.getElementById('loginEmail').value;
-      const password = document.getElementById('loginPassword').value;
-
-      const res = await fetch('http://localhost:5000/api/customers/login', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ email, password })
-      });
-      const data = await res.json();
-      alert(data.message || data.error || 'Login failed');
-      if (res.ok) {
-        document.getElementById('signupBox').classList.add('hidden');
-        document.getElementById('loginBox').classList.add('hidden');
-        document.getElementById('successBox').classList.remove('hidden');
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-    if(localStorage.getItem('loggedIn') === 'true') {
-        const name = localStorage.getItem('userName');
-        document.getElementById('navLogin').innerHTML = `Welcome, ${name}`;
-    }
-});
-
-  </script>
+<script src="style.js"></script>
 </body>
 </html>

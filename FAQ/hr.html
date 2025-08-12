@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Monthly Production FAQs</title>
+<title>HR Department FAQs</title>
 <style>
   body {
     font-family: 'Poppins', sans-serif;
@@ -71,41 +71,41 @@
 <body>
 
 <header>
-  <h1>Monthly Production FAQs</h1>
+  <h1>HR Department FAQs</h1>
 </header>
 
 <div class="container">
-  <p>Explore monthly production challenges & ERP solutions. Select the questions you face and submit to get help!</p>
+  <p>Explore HR challenges & ready solutions. Select the ones you face and submit to get help!</p>
 
   <form id="faqForm">
     <div class="faq-item">
-      <input type="checkbox" name="faq" value="Manual production planning & scheduling?">
-      <label>Manual production planning & scheduling?</label>
-      <div class="answer">✅ Solution: Automated production planning & scheduling module.</div>
+      <input type="checkbox" name="faq" value="Struggling with manual attendance tracking?">
+      <label>Struggling with manual attendance tracking?</label>
+      <div class="answer">✅ Solution: Automated biometric & online attendance system integration.</div>
     </div>
 
     <div class="faq-item">
-      <input type="checkbox" name="faq" value="Difficulty tracking WIP (work in progress)?">
-      <label>Difficulty tracking WIP (work in progress)?</label>
-      <div class="answer">✅ Solution: Live WIP tracking dashboard with real-time updates.</div>
+      <input type="checkbox" name="faq" value="Leave approvals consuming too much time?">
+      <label>Leave approvals consuming too much time?</label>
+      <div class="answer">✅ Solution: Online leave request & auto-notification workflow.</div>
     </div>
 
     <div class="faq-item">
-      <input type="checkbox" name="faq" value="Delay in monthly production reports?">
-      <label>Delay in monthly production reports?</label>
-      <div class="answer">✅ Solution: Auto-generated production reports & alerts.</div>
+      <input type="checkbox" name="faq" value="Hard to track employee performance?">
+      <label>Hard to track employee performance?</label>
+      <div class="answer">✅ Solution: Performance appraisal & KPI module built-in.</div>
     </div>
 
     <div class="faq-item">
-      <input type="checkbox" name="faq" value="Mismatch between production & inventory?">
-      <label>Mismatch between production & inventory?</label>
-      <div class="answer">✅ Solution: Integrated production & inventory system.</div>
+      <input type="checkbox" name="faq" value="New employee onboarding takes too long?">
+      <label>New employee onboarding takes too long?</label>
+      <div class="answer">✅ Solution: Digital onboarding with document upload & auto welcome emails.</div>
     </div>
 
     <div class="faq-item">
-      <input type="checkbox" name="faq" value="Hard to analyze production efficiency?">
-      <label>Hard to analyze production efficiency?</label>
-      <div class="answer">✅ Solution: Efficiency KPIs & analysis dashboard.</div>
+      <input type="checkbox" name="faq" value="Payroll calculations are error-prone?">
+      <label>Payroll calculations are error-prone?</label>
+      <div class="answer">✅ Solution: Automated payroll processing with statutory compliance.</div>
     </div>
 
     <div class="actions">
@@ -127,12 +127,48 @@
       return;
     }
 
-    // Send data to backend (replace with your actual API route)
-      fetch('/api/faq-queries', {
+    // Send to backend (you can set real backend route)
+   fetch('/api/faq-queries', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ 
-    page: 'mnarketing&sales', // ya 'sales', 'hr' depending on page
+    page: 'hr', // ya 'sales', 'hr' depending on page
+    faqs: selected 
+  })
+})
+
+   fetch('/api/faq-queries', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ 
+    page: 'purchase', // ya 'sales', 'hr' depending on page
+    faqs: selected 
+  })
+})
+
+   fetch('/api/faq-queries', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ 
+    page: 'purchase', // ya 'sales', 'hr' depending on page
+    faqs: selected 
+  })
+})
+
+   fetch('/api/faq-queries', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ 
+    page: 'purchase', // ya 'sales', 'hr' depending on page
+    faqs: selected 
+  })
+})
+
+   fetch('/api/faq-queries', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ 
+    page: 'purchase', // ya 'sales', 'hr' depending on page
     faqs: selected 
   })
 })

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invoicing FAQs</title>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #f5f5f0;
+    color: #333;
+  }
+  header {
+    background: #d2691e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  .container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 30px;
+  }
+  h2 {
+    margin-top: 0;
+    color: #2f4f4f;
+  }
+  .faq-item {
+    margin: 12px 0;
+    background: #e9e9e2;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  .faq-item label {
+    font-weight: 500;
+  }
+  .answer {
+    margin-top: 8px;
+    font-size: 0.95em;
+    color: #444;
+    background: #f9f9f7;
+    padding: 8px 12px;
+    border-left: 3px solid #2f4f4f;
+    border-radius: 4px;
+  }
+  .actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    background: #2f4f4f;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn:hover {
+    background: #556b2f;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Invoicing FAQs</h1>
+</header>
+
+<div class="container">
+  <p>Explore invoicing challenges & ERP solutions. Select the questions you face and submit to get help!</p>
+
+  <form id="faqForm">
+    <div class="faq-item">
+      <input type="checkbox" name="faq" value="Invoices still made manually in Excel?">
+      <label>Invoices still made manually in Excel?</label>
+      <div class="answer">✅ Solution: Automated invoice generation directly from ERP.</div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" name="faq" value="Hard to track pending invoices?">
+      <label>Hard to track pending invoices?</label>
+      <div class="answer">✅ Solution: Pending invoice dashboard & auto reminders.</div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" name="faq" value="Mismatch between invoice & dispatch?">
+      <label>Mismatch between invoice & dispatch?</label>
+      <div class="answer">✅ Solution: Linked dispatch & invoicing process to avoid mismatch.</div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" name="faq" value="TDS, GST calculation errors?">
+      <label>TDS, GST calculation errors?</label>
+      <div class="answer">✅ Solution: Auto-calculation of taxes as per rules.</div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" name="faq" value="Delay in monthly invoice summary?">
+      <label>Delay in monthly invoice summary?</label>
+      <div class="answer">✅ Solution: Auto-generated monthly invoice summary reports.</div>
+    </div>
+
+    <div class="actions">
+      <button type="submit" class="btn">Submit Your Queries</button>
+      <a href="#" class="btn">Ask for Free Demo</a>
+    </div>
+  </form>
+</div>
+
+<script>
+  document.getElementById('faqForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const selected = Array.from(document.querySelectorAll('input[name="faq"]:checked'))
+                          .map(cb => cb.value);
+
+    if(selected.length === 0){
+      alert('Please select at least one question.');
+      return;
+    }
+
+    // Send data to backend (replace with your actual API route)
+   fetch('/api/faq-queries', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ 
+    page: 'invoicing', // ya 'sales', 'hr' depending on page
+    faqs: selected 
+  })
+})
+
+   fetch('/api/faq-queries', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ 
+    page: 'purchase', // ya 'sales', 'hr' depending on page
+    faqs: selected 
+  })
+})
+
+   fetch('/api/faq-queries', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ 
+    page: 'purchase', // ya 'sales', 'hr' depending on page
+    faqs: selected 
+  })
+})
+
+   fetch('/api/faq-queries', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ 
+    page: 'purchase', // ya 'sales', 'hr' depending on page
+    faqs: selected 
+  })
+})
+
+   fetch('/api/faq-queries', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ 
+    page: 'purchase', // ya 'sales', 'hr' depending on page
+    faqs: selected 
+  })
+})
+
+    .then(res => res.json())
+    .then(data => {
+      alert('✅ Thank you! Your queries were submitted.');
+      window.location.href = '/'; // redirect to home or thank you page
+    })
+    .catch(err => {
+      console.error(err);
+      alert('❌ Something went wrong.');
+    });
+  });
+</script>
+
+</body>
+</html>
